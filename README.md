@@ -1,5 +1,5 @@
 # Docker Woob
-A simple Woob Docker Image that contains the Woob binary.
+A simple Woob Docker Image that contains the [Woob tool](https://woob.tech).
 
 ## Configure 
 ```
