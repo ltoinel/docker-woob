@@ -12,18 +12,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: login to docker hub
-      id: docker-hub
+    
+    - name:  Login to Docker Hub
       env:
-        username: ${{secrets.DOCKERHUB_USERNAME}}
-        password: ${{secrets.DOCKERHUB_PASSWORD}}
+        USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+        PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
       run: |
-        docker login -u $username -p $password 
-    - name: build the docker image
+          echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+          
+    - name:  Build the Docker image with multiple tags
       id: build-docker-image
       run: |
-        docker build . -f Dockerfile -t ltoinel/woob:latest
-    - name: push the docker image
-      id: push-docker-image
+       docker build . -f Dockerfile \
+            -t ltoinel/woob:latest \
+            -t ltoinel/woob:3.7
+          
+    - name: Push all Docker image tags
       run: |
-        docker push ltoinel/woob:latest
+        docker push --all-tags ltoinel/woob
