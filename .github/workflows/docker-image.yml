@@ -22,8 +22,8 @@ jobs:
     - name: build the docker image
       id: build-docker-image
       run: |
-        docker build . -f Dockerfile -t ${{secrets.DOCKERHUB_USERNAME}}/woob:latest
+        docker build . -f Dockerfile -t ltoinel/woob:latest
     - name: push the docker image
       id: push-docker-image
       run: |
-        docker push ${{secrets.DOCKERHUB_USERNAME}}/woob:latest
+        docker push ltoinel/woob:latest
