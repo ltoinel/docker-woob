@@ -1,2 +1,2 @@
 # docker-woob
-Woob Docker Image for Carbure Project
+A simple Woob Docker Image for Carbure Project
