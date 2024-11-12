@@ -1,5 +1,6 @@
 # Docker Woob
 A simple Woob Docker Image that contains the [Woob tool](https://woob.tech).
+Usefull to execute Woob on specific OS (ex: Synology).
 
 Docker Hub repository is available here :
 https://hub.docker.com/repository/docker/ltoinel/woob/general
